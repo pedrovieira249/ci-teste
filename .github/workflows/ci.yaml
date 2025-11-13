@@ -4,11 +4,14 @@ jobs:
   check-application:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        uses: actions/setup-go@v2
+      - uses: actions/checkout@v2  # Step 1: Checkout
+
+      - uses: actions/setup-go@v2  # Step 2: Setup Go
         with:
           go-version: 1.16
-      - name: Run tests
+
+      - name: Run tests            # Step 3: Test
         run: go test
-      - name: Run application
+
+      - name: Run application      # Step 4: Run app
         run: go run math.go
